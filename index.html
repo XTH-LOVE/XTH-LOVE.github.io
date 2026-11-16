@@ -148,6 +148,21 @@
       @media (prefers-color-scheme: dark){.accent-rose{--accent:#d98aa5;--accent-soft:#38222b}}
       .accent-green{--accent:var(--sage);--accent-soft:var(--sage-soft)}
 
+      /* ---------- about ---------- */
+      .about-grid{display:grid;gap:22px;margin-top:22px}
+      @media(min-width:820px){.about-grid{grid-template-columns:1.5fr 1fr;gap:36px;align-items:start}}
+      .about-lead{font-size:16.5px;margin:0}
+      .about-lead b{color:var(--red)}
+      .about-body{color:var(--ink-soft);font-size:15.5px;margin:14px 0 0}
+      .fact-list{list-style:none;margin:0;padding:0;display:grid;gap:0;border-top:1px solid var(--line)}
+      .fact-list li{display:flex;justify-content:space-between;gap:16px;padding:10px 2px;border-bottom:1px solid var(--line);font-size:14.5px}
+      .fact-list .k{color:var(--ink-soft)}
+      .fact-list .v{font-weight:700;text-align:right}
+      .contact-card{background:var(--card);border:1.5px solid var(--ink);border-radius:20px;padding:20px 22px;box-shadow:var(--shadow)}
+      .contact-card h3{margin:0 0 6px;font-family:"Noto Serif SC",serif;font-size:19px;font-weight:900}
+      .contact-card p{margin:0 0 14px;font-size:14px;color:var(--ink-soft)}
+      .contact-card .gh-link{font-family:"IBM Plex Mono",monospace;font-size:15px;font-weight:600;word-break:break-all}
+
       /* ---------- routing ---------- */
       .route-list{display:grid;gap:14px;margin-top:22px}
       @media(min-width:820px){.route-list{grid-template-columns:1fr 1fr}}
@@ -210,6 +225,7 @@
         <a class="brand" href="#top">XTH<span>-</span>LOVE</a>
         <nav class="mast-nav" aria-label="页面导航">
           <a href="#projects">项目</a>
+          <a href="#about">关于</a>
           <a href="#routes">子域名</a>
           <a class="gh" href="https://github.com/XTH-LOVE" target="_blank" rel="noopener">GitHub ↗</a>
         </nav>
@@ -221,11 +237,11 @@
       <div class="opening">
         <div class="date-line mono">
           <span>PORTFOLIO · 作品总入口</span>
-          <span>吉林 · 公主岭</span>
+          <span>青海 · 海南藏族自治州</span>
           <span>2026 年 11 月</span>
         </div>
         <h1>一个地址，<br />装下<span class="hl">四个项目</span>。</h1>
-        <p class="lede">我是缐廷华（XTH-LOVE），独立开发者。这里是我所有公开作品的总入口——两个音乐播放器、一个情侣小家、一台斯诺克球桌，以后跟人介绍，只需要报这一个域名。</p>
+        <p class="lede">我是缐廷华（XTH-LOVE），来自青海省海南藏族自治州的独立开发者。这里是我所有公开作品的总入口——两个音乐播放器、一个情侣小家、一台斯诺克球桌，以后跟人介绍，只需要报这一个域名。</p>
 
         <div class="domain-card">
           <div>
@@ -261,6 +277,8 @@
               <li>9 大音源聚合：网易云 / QQ / 酷狗 / 酷我 / B站 / YouTube Music / Spotify / Apple Music / LX</li>
               <li>8 种歌词形态：YRC 逐字歌词、翻译、罗马音、悬浮歌词等</li>
               <li>AutoMix 节拍分析自动混音 + 十段 EQ，6 档音质最高至母带</li>
+              <li>歌词对齐走 ONNX 本地推理，签名热更新，双 ABI 构建</li>
+              <li>当前版本 v0.6.5（versionCode 23），最低支持 Android 7.0 / API 24</li>
             </ul>
             <div class="tags">
               <span class="tag hot">Kotlin</span><span class="tag">Jetpack Compose</span><span class="tag">Media3</span><span class="tag">Android 7.0+</span><span class="tag">GPLv3</span>
@@ -286,6 +304,8 @@
               <li>HyperOS 风格界面，大圆角设计语言</li>
               <li>跨设备同步：登录同步账号后曲库多端一致，退出不删本地数据</li>
               <li>歌单迁移：以网易云为源，向各音源搬运歌单</li>
+              <li>双元素换手的近无缝播放，切歌间隙更短</li>
+              <li>官方下载页另设国内下载入口，大陆直连 GitHub 也不怕断</li>
             </ul>
             <div class="tags">
               <span class="tag hot">TypeScript</span><span class="tag">React</span><span class="tag">Tauri</span><span class="tag">Vite</span>
@@ -311,6 +331,7 @@
               <li>三端一码：网页、安卓、Windows 桌面端同步使用</li>
               <li>实时通话：基于 ZEGO 的音视频能力</li>
               <li>数据托管在 Supabase，账号与内容归自己掌控</li>
+              <li>一套代码三端发布：Capacitor 打包安卓、Electron 打包 Windows</li>
             </ul>
             <div class="tags">
               <span class="tag hot">Nuxt 4</span><span class="tag">Vue 3</span><span class="tag">TypeScript</span><span class="tag">Supabase</span>
@@ -334,6 +355,7 @@
             <ul class="p-feats">
               <li>完整斯诺克球局：红球与彩球交替、按分值清台</li>
               <li>浏览器打开即玩，无需安装</li>
+              <li>纯 TypeScript 实现，不依赖游戏引擎</li>
             </ul>
             <div class="tags">
               <span class="tag hot">TypeScript</span><span class="tag">Web Game</span>
@@ -346,10 +368,44 @@
         </article>
       </section>
 
+      <!-- about -->
+      <section id="about">
+        <div class="sec-head">
+          <span class="no">02</span>
+          <h2>关于我</h2>
+          <p>独立开发者 · 青海海南</p>
+        </div>
+        <div class="about-grid">
+          <div>
+            <p class="about-lead">我是 <b>缐廷华</b>，GitHub 上叫 <b>XTH-LOVE</b>，一名来自青海省海南藏族自治州的独立开发者。</p>
+            <p class="about-body">平时主要写自己真正想用的东西：音乐播放器写了两个——一个给安卓手机（MeloX），一个给桌面（Flyme Music）；给两个人用的私密空间 Love 小家横跨网页、安卓和 Windows 三端；剩下一张斯诺克球桌，纯粹是写着好玩。四个项目全部开源，技术栈以 TypeScript、Kotlin 和 Vue / Nuxt 为主，从写代码、做页面到打包发布都一个人完成。</p>
+            <p class="about-body">做东西的习惯是把细节磨到能日常用：歌词要逐字对齐、切歌要近无缝、同步不能丢数据。这个主页就是所有作品的总入口，认准 xth-love.loc.cc 这一个地址即可。</p>
+          </div>
+          <div>
+            <ul class="fact-list">
+              <li><span class="k">名字</span><span class="v">缐廷华 · XTH-LOVE</span></li>
+              <li><span class="k">家乡</span><span class="v">青海省海南藏族自治州</span></li>
+              <li><span class="k">身份</span><span class="v">独立开发者</span></li>
+              <li><span class="k">公开仓库</span><span class="v">4 个 · 全部开源</span></li>
+              <li><span class="k">主力技术栈</span><span class="v">TypeScript / Kotlin / Vue</span></li>
+            </ul>
+            <div class="contact-card" style="margin-top:20px">
+              <h3>联系我</h3>
+              <p>想聊某个项目、报 bug 或提想法，最快的方式是去对应仓库开 Issue；也可以先到 GitHub 主页逛逛。</p>
+              <div class="gh-link">github.com/XTH-LOVE</div>
+              <div class="p-links" style="margin-top:14px">
+                <a class="btn solid" href="https://github.com/XTH-LOVE" target="_blank" rel="noopener">GitHub 主页 ↗</a>
+                <button class="btn" type="button" data-copy="https://github.com/XTH-LOVE">复制链接</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- routing -->
       <section id="routes">
         <div class="sec-head">
-          <span class="no">02</span>
+          <span class="no">03</span>
           <h2>子域名分流</h2>
           <p>一个域名 · 五个入口</p>
         </div>
